@@ -8,6 +8,7 @@ import (
     "strconv"
 )
 
+
 func PartOne(inputFilePath string) (safeReports int) {
     safeReports = 0
 
@@ -24,7 +25,7 @@ func PartOne(inputFilePath string) (safeReports int) {
         line := scanner.Text()
         report := strings.Fields(line) 
 
-        if isReportValid(report) {
+        if IsReportValid(report) {
             safeReports++
         }
     }
@@ -36,7 +37,7 @@ func PartOne(inputFilePath string) (safeReports int) {
     return
 }
 
-func isReportValid(report []string) bool {
+func IsReportValid(report []string) bool {
 
     i, j := 0, 1
     num1, _ := strconv.Atoi(report[i])
@@ -54,7 +55,7 @@ func isReportValid(report []string) bool {
 
     for j < len(report) {
         // check difference between 1 and 3
-        difference := absInt(num1 - num2)
+        difference := AbsInt(num1 - num2)
 
         if difference == 0 || difference > 3 {
             return false
@@ -82,7 +83,7 @@ func isReportValid(report []string) bool {
     return true
 }
 
-func absInt(x int) int {
+func AbsInt(x int) int {
     if(x < 0) {
         return -x
     }
