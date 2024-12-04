@@ -5,7 +5,7 @@ import (
 	"log"
 	"os"
 	"regexp"
-    "strconv"
+        "strconv"
 )
 
 func PartOne(inputFilePath string) int {
